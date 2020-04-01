@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body style="background-color:maroon;color:white;">
+
+
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Grocery Store </a>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="active"><a href="@Url.Action("Index","Home")">Home</a></li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Customer <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="@Url.Action("Create","Register")">Register</a></li>
+                        <li><a href="@Url.Action("CustomerLogin","Register")">Login</a></li>
+
+                    </ul>
+                </li>
+                <li><a href="@Url.Action("AdminLogin","Home")">Admin Login </a></li>
+                <li><a href="@Url.Action("Contact","Home")">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    @Html.ActionLink("Home", "Index", "Home")
+
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

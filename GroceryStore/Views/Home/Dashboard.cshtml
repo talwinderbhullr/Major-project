@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewBag.Title = "Dashboard";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+
+            <h2>Welcome to the Dashboard of the Grocery Store </h2>
+            <hr />
+
+            <a href="@Url.Action("PurchaseList","Purchase")">Purchase  Record </a>
+            <br />
+
+            <a href="@Url.Action("SaleDetails","Sale")">Sale  Record </a>
+            <br />
+
+            <a href="@Url.Action("RegisterList","Register")"> Customer List </a>
+            <br />
+
+            <a href="@Url.Action("QueryDetails","Query")">Queries  Record </a>
+            <br />
+
+
+        </div>
+
+    </div>
+
+</div>
+

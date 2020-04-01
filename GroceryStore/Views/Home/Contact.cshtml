@@ -1,0 +1,42 @@
+﻿@{
+    ViewBag.Title = "Contact";
+}
+
+
+
+<h2 align="center">Feed Back Form </h2>
+<hr />
+<div class="container">
+    <div class="col-md-6">
+        <img src="~/images/fb.png" class="img-responsive img-thumbnail" style="height:350px;width:500px;" />
+    </div>
+    <div class="col-md-6">
+        <form method="post" action="FeedPass">
+            <div class="form-group">
+                <label>Enter  Name </label> <br />
+                <input type="text" name="FeedName" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label>Enter Contact </label> <br />
+                <input type="number" name="FeedContact" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>Enter Email </label> <br />
+                <input type="Email" name="FeedEmail" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label>Enter Feed Back Message </label> <br />
+                <input type="text" name="FeedMsg" class="form-control" />
+            </div>
+
+
+
+            <input type="submit" value="Send Feed Back " class="btn btn-primary" />
+        </form>
+
+    </div>
+</div>
+
+

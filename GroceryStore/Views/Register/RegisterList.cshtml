@@ -1,0 +1,47 @@
+﻿@model IEnumerable<GroceryStore.Models.Register>
+
+@{
+    ViewBag.Title = "RegisterList";
+}
+
+<h2>Details of Register Customer List </h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Password)
+        </th>
+        <th> Delete </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Password)
+            </td>
+            <td>
+                <span class="btn btn-primary"> @Html.ActionLink("Delete", "Delete", new { id = item.id })</span>
+            </td>
+        </tr>
+    }
+
+</table>
+
+
+
+<br />
+<a href="@Url.Action("Dashboard","Home")" class="btn btn-danger">Back to DashBoard </a>

@@ -1,0 +1,67 @@
+﻿@model IEnumerable<GroceryStore.Models.Purchase>
+
+@{
+    ViewBag.Title = "PurchaseList";
+}
+
+<h2>Purchase List</h2>
+
+<p>
+    @Html.ActionLink("Add Purchase ", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CompanyName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Qty)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Total)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BuyDate)
+        </th>
+        <th> Edit </th>
+        <th>Delete </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProductName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CompanyName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Qty)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Price)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Total)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BuyDate)
+        </td>
+        <td>
+            <span class="btn btn-danger">    @Html.ActionLink("Edit", "Edit", new { id = item.id }) </span></td>
+        <td>
+            <span class="btn btn-danger">  @Html.ActionLink("Delete", "Delete", new { id = item.id }) </span>
+</td>
+    </tr>
+}
+
+</table>
+
+
+<a href="@Url.Action("Dashboard","Home")" class="btn btn-primary"> Back to Dashboard  </a>
